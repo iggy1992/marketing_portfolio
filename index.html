@@ -1,3 +1,16 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이기원 마케팅 포트폴리오</title>
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+  <style>
+    body { font-family: 'Pretendard', sans-serif; }
+  </style>
+</head>
+<body>
+
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -27,7 +40,7 @@ p{font-size:15px;color:var(--color-text-secondary);line-height:1.7;margin-bottom
 .metric-value{font-size:24px;font-weight:500;color:var(--color-text-primary);line-height:1.2}
 .metric-sub{font-size:12px;color:var(--color-text-tertiary);margin-top:2px}
 .phase-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:1.25rem}
-.phase{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:0.875rem}
+.phase{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:0.875rem; border: 0.5px solid var(--color-border-tertiary);}
 .phase-label{font-size:12px;color:var(--color-text-tertiary);margin-bottom:4px}
 .phase-title{font-size:14px;font-weight:500;color:var(--color-text-primary);margin-bottom:0.4rem}
 .phase p{font-size:13px;margin-bottom:0;color:var(--color-text-secondary)}
@@ -39,6 +52,9 @@ p{font-size:15px;color:var(--color-text-secondary);line-height:1.7;margin-bottom
 .badge-a{background:#EEEDFE;color:#3C3489}
 .badge-r{background:#FAEEDA;color:#633806}
 .sar-text{font-size:13px;color:var(--color-text-secondary);line-height:1.6}
+.slide, .section-divider {
+  scroll-margin-top: 50px;  /* 네비 높이만큼 */
+}
 .step-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:1.25rem}
 .step{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:0.875rem}
 .step-num{font-size:12px;color:var(--color-text-tertiary);margin-bottom:4px}
@@ -54,7 +70,7 @@ p{font-size:15px;color:var(--color-text-secondary);line-height:1.7;margin-bottom
 .ba-box p{font-size:13px;margin-bottom:4px;line-height:1.5}
 .ba-before p{color:#791F1F}
 .ba-after p{color:#27500A}
-.section-divider{padding:2rem 2rem 1.5rem;background:var(--color-background-secondary);border-bottom:0.5px solid var(--color-border-tertiary)}
+.section-divider{padding:2rem 2rem 1.5rem;background:var(--color-background-secondary);border-bottom:0.5px solid var(--color-border-tertiary);border-top: 3px solid;}
 .section-divider .context{font-size:14px;color:var(--color-text-tertiary);margin-top:0.4rem;font-style:italic}
 .insight{border-left:2px solid var(--color-border-secondary);padding-left:1rem;margin-top:1.25rem}
 .insight p{font-size:14px;color:var(--color-text-secondary);margin-bottom:0.5rem}
@@ -75,7 +91,7 @@ p{font-size:15px;color:var(--color-text-secondary);line-height:1.7;margin-bottom
 .agent{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1rem 1.25rem;background:var(--color-background-primary)}
 .agent h3{font-size:14px;margin-bottom:0.4rem;color:var(--color-text-primary)}
 .agent p{font-size:13px;margin-bottom:4px}
-.closing{text-align:center;padding:3rem 2rem}
+.closing{text-align:left;padding:3rem 2rem}
 .closing h2{font-size:24px;margin-bottom:0.75rem}
 .closing p{font-size:16px;color:var(--color-text-secondary);margin-bottom:0.3rem}
 
@@ -164,6 +180,7 @@ p{font-size:15px;color:var(--color-text-secondary);line-height:1.7;margin-bottom
     </div>
     <div class="nav-divider"></div>
     <div class="nav-primary">
+      <a href="#tools">활용도구</a>
       <a href="#closing">마무리</a>
     </div>
   </div>
@@ -256,7 +273,8 @@ p{font-size:15px;color:var(--color-text-secondary);line-height:1.7;margin-bottom
     <div class="axis"><div class="axis-icon">🔁</div><h3>CRM & 데이터</h3><p style="font-size:13px;color:var(--color-text-secondary)">세그먼트 설계 · 메시지 전략 · SQL 분석</p><div class="axis-kpi">투자 매출 YoY +99% (2024→2025)<br>첫 투자 전환율 +526%</div></div>
   </div>
 </div>
-
+<!-- 브랜딩 섹션 -->
+<div class="section-divider" id="branding" style="border-top-color: #7F77DD;">
 <div class="section-divider" id="branding" style="border-top:0.5px solid var(--color-border-tertiary)">
   <div class="tag tag-brand">Branding for Value Growth</div>
   <h2>고객을 아는 브랜드, 고객이 알아주는 브랜드로</h2>
@@ -277,6 +295,8 @@ p{font-size:15px;color:var(--color-text-secondary);line-height:1.7;margin-bottom
   </div>
 </div>
 
+  <!-- CRM 섹션 -->
+<div class="section-divider" id="crm" style="border-top-color: #1D9E75;">
 <div class="section-divider" id="crm" style="border-top:0.5px solid var(--color-border-tertiary)">
   <div class="tag tag-crm">CRM for Loyalty Growth</div>
   <h2>유저를 확실한 고객으로 만드는 CRM</h2>
@@ -322,6 +342,8 @@ p{font-size:15px;color:var(--color-text-secondary);line-height:1.7;margin-bottom
   <p class="context">브랜드도 없고 예산도 빠듯한 상황에서, 매출을 만들어야 했다</p>
 </div>
 
+  <!-- 퍼포먼스 섹션 -->
+<div class="section-divider" id="perf" style="border-top-color: #BA7517;">
 <div class="slide">
   <div class="tag tag-perf">케이스 4 · 부동산담보대출 퍼포먼스 · 기여도 80% · 2023.09–</div>
   <h2>작은 예산으로 조건에 딱 맞는 유저 찾기</h2>
@@ -359,7 +381,8 @@ p{font-size:15px;color:var(--color-text-secondary);line-height:1.7;margin-bottom
     <p>브랜드 인지도가 낮은 금융사의 소셜 광고는 보이스피싱으로 오해받는 구조적 한계가 있다. 이 판단이 리브랜딩 제안으로 이어졌고, 결국 10주년 리브랜딩으로 실현됐다.</p>
   </div>
 </div>
-
+<!-- AI 섹션 -->
+<div class="section-divider" id="ai" style="border-top-color: #378ADD;">
 <div class="section-divider" id="ai" style="border-top:0.5px solid var(--color-border-tertiary)">
   <div class="tag tag-ai">AI 워크플로우</div>
   <h2>AI를 쓰는 마케터가 아니라,<br>AI로 마케팅 시스템을 만드는 마케터</h2>
@@ -380,7 +403,33 @@ p{font-size:15px;color:var(--color-text-secondary);line-height:1.7;margin-bottom
     <div class="tool-card"><h3>콘텐츠</h3><p>Figma · Strapi · Wordpress · Adobe Photoshop · Premiere</p></div>
   </div>
 </div>
-
+<div class="slide" id="tools">
+  <div class="slide-num">활용도구</div>
+  <h2>협업 툴을 단순히 '사용'하는 수준을 넘어,<br>AI와 분석 도구를 연결해 마케팅 효율을 극대화하는 워크플로우를 구축했습니다.</h2>
+  <div class="card-grid" style="grid-template-columns:repeat(4,1fr);margin-top:1.5rem">
+    <div class="card">
+      <h3 style="font-size:15px;margin-bottom:0.5rem">AI</h3>
+      <p style="margin-bottom:0.75rem">전략 기획, 카피라이팅, 리포트 자동화, 유저 세그먼트 분석, DB 분석 쿼리 도출, 랜딩페이지 CSS+모션 초안 구현</p>
+      <p style="font-size:13px;color:var(--color-text-primary)">· Chat-GPT<br>· Claude Code<br>· Google Antigravity<br>· Gemini</p>
+    </div>
+    <div class="card">
+      <h3 style="font-size:15px;margin-bottom:0.5rem">분석</h3>
+      <p style="margin-bottom:0.75rem">퍼널 분석, 트래픽 성과 측정, 유저 행동 인사이트 분석</p>
+      <p style="font-size:13px;color:var(--color-text-primary)">· GA4<br>· GTM<br>· Appsflyer<br>· Amplitude<br>· MySQL<br>· Redash</p>
+    </div>
+    <div class="card">
+      <h3 style="font-size:15px;margin-bottom:0.5rem">커뮤니케이션</h3>
+      <p style="margin-bottom:0.75rem">프로젝트 관리, 부서 간 협업 및 자료 공유</p>
+      <p style="font-size:13px;color:var(--color-text-primary)">· Google Workspace<br>· Microsoft Office<br>· JIRA<br>· Confluence<br>· Slack</p>
+    </div>
+    <div class="card">
+      <h3 style="font-size:15px;margin-bottom:0.5rem">콘텐츠</h3>
+      <p style="margin-bottom:0.75rem">크리에이티브 협업 및 프로모션 제작 지원</p>
+      <p style="font-size:13px;color:var(--color-text-primary)">· Figma<br>· Strapi<br>· Wordpress<br>· Adobe Photoshop<br>· Adobe Premiere</p>
+    </div>
+  </div>
+</div>
+  
 <div class="slide" id="forward" style="text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:260px">
   <h2 style="margin-bottom:0.75rem">지금까지, 그리고 앞으로</h2>
   <p style="max-width:520px;margin:0 auto 0.75rem">거의 없던 상태에서 시작해 채널·퍼널·CRM·데이터 인프라·브랜드·콘텐츠·자동화까지, 마케팅의 모든 레이어를 순서대로 쌓아왔습니다.</p>
@@ -391,10 +440,13 @@ p{font-size:15px;color:var(--color-text-secondary);line-height:1.7;margin-bottom
 <div class="closing" id="closing">
   <h2>브랜드의 처음부터 끝까지,<br>전략부터 실행까지 함께하겠습니다.</h2>
   <p style="margin-top:1rem">고객을 아는 브랜드, 고객이 알아주는 브랜드로 성장하는 여정에 함께하고 싶습니다.</p>
-  <div style="margin-top:1.5rem;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+  <div style="margin-top:1.5rem;display:flex;gap:12px;justify-content:flex-start;flex-wrap:wrap">
+  <!-- center → flex-start -->
     <a href="mailto:itsorigin92@gmail.com" style="font-size:14px;color:var(--color-text-secondary);text-decoration:none;padding:8px 16px;border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md)">itsorigin92@gmail.com</a>
     <a href="https://linkedin.com/in/기원-이-190460139" target="_blank" style="font-size:14px;color:var(--color-text-secondary);text-decoration:none;padding:8px 16px;border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md)">LinkedIn</a>
   </div>
 </div>
 
 </div>
+</body>
+</html>
