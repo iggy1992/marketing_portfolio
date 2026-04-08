@@ -1,0 +1,475 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans)}
+.portfolio{max-width:860px;margin:0 auto;padding:1rem 0}
+.slide{padding:2.5rem 2rem;border-bottom:0.5px solid var(--color-border-tertiary);min-height:320px}
+.slide:last-child{border-bottom:none}
+.tag{display:inline-block;font-size:11px;padding:3px 10px;border-radius:var(--border-radius-md);margin-bottom:1rem;font-weight:500}
+.tag-brand{background:#EEEDFE;color:#3C3489}
+.tag-crm{background:#E1F5EE;color:#085041}
+.tag-perf{background:#FAEEDA;color:#633806}
+.tag-ai{background:#E6F1FB;color:#0C447C}
+.tag-lead{background:#FBEAF0;color:#72243E}
+.slide-num{font-size:11px;color:var(--color-text-tertiary);margin-bottom:0.5rem;letter-spacing:0.05em}
+h1{font-size:26px;font-weight:500;color:var(--color-text-primary);line-height:1.3;margin-bottom:0.75rem}
+h2{font-size:20px;font-weight:500;color:var(--color-text-primary);margin-bottom:0.5rem;line-height:1.3}
+h3{font-size:15px;font-weight:500;color:var(--color-text-primary);margin-bottom:0.4rem}
+p{font-size:14px;color:var(--color-text-secondary);line-height:1.7;margin-bottom:0.75rem}
+.sub{font-size:15px;color:var(--color-text-secondary);line-height:1.6;margin-bottom:0.5rem}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(0,1fr));gap:12px;margin-top:1.25rem}
+.card{background:var(--color-background-secondary);border-radius:var(--border-radius-lg);padding:1rem 1.25rem}
+.card h3{font-size:13px;font-weight:500;margin-bottom:0.4rem}
+.card p{font-size:13px;margin-bottom:0}
+.metric-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-top:1.25rem}
+.metric{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:0.875rem 1rem}
+.metric-label{font-size:12px;color:var(--color-text-secondary);margin-bottom:4px}
+.metric-value{font-size:22px;font-weight:500;color:var(--color-text-primary);line-height:1.2}
+.metric-sub{font-size:11px;color:var(--color-text-tertiary);margin-top:2px}
+.phase-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:1.25rem}
+.phase{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:0.875rem}
+.phase-label{font-size:11px;color:var(--color-text-tertiary);margin-bottom:4px}
+.phase-title{font-size:13px;font-weight:500;color:var(--color-text-primary);margin-bottom:0.4rem}
+.phase p{font-size:12px;margin-bottom:0;color:var(--color-text-secondary)}
+.sar-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(0,1fr));gap:10px;margin-top:1.25rem}
+.sar{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1rem 1.25rem;background:var(--color-background-primary)}
+.sar-row{display:flex;gap:10px;margin-bottom:6px;align-items:flex-start}
+.sar-badge{font-size:10px;font-weight:500;padding:2px 7px;border-radius:var(--border-radius-md);white-space:nowrap;margin-top:1px}
+.badge-s{background:#E1F5EE;color:#085041}
+.badge-a{background:#EEEDFE;color:#3C3489}
+.badge-r{background:#FAEEDA;color:#633806}
+.sar-text{font-size:12px;color:var(--color-text-secondary);line-height:1.6}
+.step-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:1.25rem}
+.step{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:0.875rem}
+.step-num{font-size:11px;color:var(--color-text-tertiary);margin-bottom:4px}
+.step h3{font-size:13px}
+.step p{font-size:12px;margin-bottom:0}
+.before-after{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:1.25rem}
+.ba-box{border-radius:var(--border-radius-md);padding:0.875rem 1rem}
+.ba-before{background:#FCEBEB;border:0.5px solid #F7C1C1}
+.ba-after{background:#EAF3DE;border:0.5px solid #C0DD97}
+.ba-label{font-size:11px;font-weight:500;margin-bottom:6px}
+.ba-before .ba-label{color:#A32D2D}
+.ba-after .ba-label{color:#3B6D11}
+.ba-box p{font-size:12px;margin-bottom:4px;line-height:1.5}
+.ba-before p{color:#791F1F}
+.ba-after p{color:#27500A}
+.section-divider{padding:2rem 2rem 1.5rem;background:var(--color-background-secondary);border-bottom:0.5px solid var(--color-border-tertiary)}
+.section-divider .context{font-size:13px;color:var(--color-text-tertiary);margin-top:0.4rem;font-style:italic}
+.insight{border-left:2px solid var(--color-border-secondary);padding-left:1rem;margin-top:1.25rem}
+.insight p{font-size:13px;color:var(--color-text-secondary);margin-bottom:0.5rem}
+.career-table{width:100%;margin-top:1.25rem;border-collapse:collapse;font-size:13px}
+.career-table th{text-align:left;padding:6px 10px;font-weight:500;font-size:12px;color:var(--color-text-secondary);border-bottom:0.5px solid var(--color-border-tertiary)}
+.career-table td{padding:8px 10px;border-bottom:0.5px solid var(--color-border-tertiary);color:var(--color-text-primary);vertical-align:top}
+.career-table tr:last-child td{border-bottom:none}
+.axis-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:1.25rem}
+.axis{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1rem 1.25rem;background:var(--color-background-primary)}
+.axis-icon{font-size:16px;margin-bottom:6px}
+.axis h3{font-size:14px;margin-bottom:0.4rem}
+.axis-kpi{font-size:12px;color:var(--color-text-tertiary);margin-top:6px;padding-top:6px;border-top:0.5px solid var(--color-border-tertiary)}
+.divider{height:0.5px;background:var(--color-border-tertiary);margin:0}
+.tool-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:1.25rem}
+.tool-card{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:0.875rem}
+.tool-card h3{font-size:12px;margin-bottom:6px}
+.tool-card p{font-size:11px;color:var(--color-text-secondary);margin-bottom:4px}
+.agent-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:1.25rem}
+.agent{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1rem 1.25rem;background:var(--color-background-primary)}
+.agent h3{font-size:13px;margin-bottom:0.4rem;color:var(--color-text-primary)}
+.agent p{font-size:12px;margin-bottom:4px}
+.closing{text-align:center;padding:3rem 2rem}
+.closing h2{font-size:22px;margin-bottom:0.75rem}
+.closing p{font-size:15px;color:var(--color-text-secondary);margin-bottom:0.3rem}
+.nav{position:sticky;top:0;background:var(--color-background-primary);border-bottom:0.5px solid var(--color-border-tertiary);padding:0.5rem 1rem;display:flex;gap:6px;flex-wrap:wrap;z-index:10}
+.nav a{font-size:11px;color:var(--color-text-secondary);text-decoration:none;padding:3px 8px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-tertiary)}
+.nav a:hover{background:var(--color-background-secondary)}
+</style>
+
+<div class="portfolio">
+
+<div class="nav">
+  <a href="#cover">표지</a>
+  <a href="#overview">오버뷰</a>
+  <a href="#lead">리더십</a>
+  <a href="#career">커리어</a>
+  <a href="#axis">핵심역량</a>
+  <a href="#branding">브랜딩</a>
+  <a href="#crm">CRM</a>
+  <a href="#perf">퍼포먼스</a>
+  <a href="#ai">AI</a>
+  <a href="#closing">마무리</a>
+</div>
+
+<div class="slide" id="cover" style="min-height:340px;display:flex;flex-direction:column;justify-content:center">
+  <div class="slide-num">01 / 표지</div>
+  <h1>비즈니스와 고객이<br>함께 성장할 수 있도록</h1>
+  <p class="sub">전략을 설계하고, 환경을 만들고, 팀과 함께 실행하는 마케터</p>
+  <p style="margin-top:1rem;font-size:13px;color:var(--color-text-tertiary)">브랜드 마케터 이기원</p>
+</div>
+
+<div class="slide" id="intro">
+  <div class="slide-num">02 / 소개</div>
+  <h2>인지부터 전환, 유지까지<br>고객 여정 전반을 책임집니다</h2>
+  <div class="card-grid" style="grid-template-columns:repeat(3,1fr)">
+    <div class="card">
+      <h3>빠른 삽질로 좋은 밭을</h3>
+      <p>확신이 없을 땐 빠른 실험으로 답을 찾습니다. 망설임의 비용을 줄이고 최선의 결과를 향해 부지런히 움직입니다.</p>
+    </div>
+    <div class="card">
+      <h3>판단보다 호기심</h3>
+      <p>"당연한 것"은 없다는 전제로 출발합니다. 이해되지 않으면 데이터부터 들여다보고 인사이트를 찾습니다.</p>
+    </div>
+    <div class="card">
+      <h3>부드럽게 조율하고, 강하게 추진</h3>
+      <p>협업에선 유연하게, 실무에선 끝까지. 팀의 목표를 완수하는 사람이 되고자 합니다.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider" id="overview">
+  <div class="tag tag-brand">마케팅 전략 오버뷰</div>
+  <h2>에잇퍼센트 마케팅, 어떻게 만들어왔나</h2>
+  <p class="context">각각의 캠페인은 이 흐름 안에서 실행된 조각들이다</p>
+</div>
+
+<div class="slide" style="padding-top:1.5rem">
+  <div class="phase-grid">
+    <div class="phase">
+      <div class="phase-label">Phase 1 · 2021–2022</div>
+      <div class="phase-title">채널 확장 · 퍼널 체계화</div>
+      <p>채널도 전략도 예산도 없던 상태에서 시작. 대출 퍼널을 처음으로 체계화하고 멀티채널 퍼포먼스 광고 세팅.</p>
+    </div>
+    <div class="phase">
+      <div class="phase-label">Phase 2 · 2022–2023</div>
+      <div class="phase-title">고객 기반 마케팅 전환</div>
+      <p>"모으는 것만큼 유지되고 있나"라는 질문에서 출발. RFM 세그멘테이션 도입 제안 및 데이터 분석가와 함께 구축.</p>
+    </div>
+    <div class="phase">
+      <div class="phase-label">Phase 3 · 2023</div>
+      <div class="phase-title">데이터 인프라 구축</div>
+      <p>투자 앱 출시 계기로 웹/앱 이벤트 택소노미 설계. GTM 세팅. 마케팅 의사결정 데이터 기반 전환 인프라 구축.</p>
+    </div>
+    <div class="phase">
+      <div class="phase-label">Phase 4 · 2024</div>
+      <div class="phase-title">브랜드 · 퍼포먼스 통합</div>
+      <p>퍼포먼스 한계가 브랜드 신뢰도에서 온다는 판단. 10주년을 계기로 리브랜딩. C레벨 인터뷰로 브랜드 에센스 명문화.</p>
+    </div>
+    <div class="phase">
+      <div class="phase-label">Phase 5 · 2025</div>
+      <div class="phase-title">콘텐츠 · SEO/GEO · 리텐션</div>
+      <p>광고 의존도를 줄이고 자생적 유입 구조 구축. SEO·GEO 본격 시작. CRM 연계 리텐션 강화.</p>
+    </div>
+    <div class="phase">
+      <div class="phase-label">Phase 6 · 2026–</div>
+      <div class="phase-title">AI 에이전트 자동화</div>
+      <p>AI 에이전트 직접 설계·구축해 반복 업무 자동화. GEO SOV 트래커 제작. 툴을 쓰는 것을 넘어 툴을 만드는 방향으로.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider" id="lead">
+  <div class="tag tag-lead">리더십</div>
+  <h2>팀과 환경을 만드는 마케터</h2>
+</div>
+
+<div class="slide" style="padding-top:1.5rem">
+  <div class="sar-grid" style="grid-template-columns:repeat(3,1fr)">
+    <div class="sar">
+      <h3 style="font-size:13px;margin-bottom:0.75rem">마케팅 팀 빌드, 두 번</h3>
+      <div class="sar-row"><span class="sar-badge badge-s">상황</span><span class="sar-text">마케팅 팀이 없는 상태에서 두 번의 팀 빌드 경험</span></div>
+      <div class="sar-row"><span class="sar-badge badge-a">행동</span><span class="sar-text">채용 기준 정의 → 팀 리드·팀원 채용 → 온보딩. 팀 리더 공석 시 대행, 전략 방향 결정 및 팀 운영</span></div>
+      <div class="sar-row"><span class="sar-badge badge-r">결과</span><span class="sar-text">마케팅 조직이 없던 상태에서 지금의 팀 구조로</span></div>
+    </div>
+    <div class="sar">
+      <h3 style="font-size:13px;margin-bottom:0.75rem">무경험자를 독립 운영자로</h3>
+      <div class="sar-row"><span class="sar-badge badge-s">상황</span><span class="sar-text">시원스쿨 소셜미디어팀 파트장, 마케팅 무경험자 2인 배정</span></div>
+      <div class="sar-row"><span class="sar-badge badge-a">행동</span><span class="sar-text">콘텐츠 기획·제작·성과 분석·예산 관리·협업 방식 전부 직접 교육. 영상 제작 인턴 채용 및 육성</span></div>
+      <div class="sar-row"><span class="sar-badge badge-r">결과</span><span class="sar-text">1년 후 팀원들이 유튜브 채널 독립 운영. 인턴은 이후 콘텐츠 제작 직무로 커리어 전환</span></div>
+    </div>
+    <div class="sar">
+      <h3 style="font-size:13px;margin-bottom:0.75rem">2년 넘게 설득해서 만든 인프라</h3>
+      <div class="sar-row"><span class="sar-badge badge-s">Before</span><span class="sar-text">공지사항에 이미지 올려서 이벤트 운영. 투자자 가입해도 온보딩·포인트 지급 없음</span></div>
+      <div class="sar-row"><span class="sar-badge badge-a">행동</span><span class="sar-text">수동 실행으로 수치를 먼저 만들고 데이터로 개발팀 설득 → 자동화로 전환</span></div>
+      <div class="sar-row"><span class="sar-badge badge-r">After</span><span class="sar-text">Strapi 기반 이벤트 페이지·어드민 구축. 계좌 개설 완료 시 포인트 자동 지급 시스템</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="slide" id="career">
+  <div class="slide-num">커리어 요약</div>
+  <h2>통신 → 에듀테크 → 핀테크</h2>
+  <p>도메인을 넘어 고객 여정을 깊게 파왔습니다.</p>
+  <table class="career-table">
+    <thead>
+      <tr>
+        <th>회사</th><th>기간</th><th>주요 역할</th><th>대표 성과</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="font-weight:500">KT</td>
+        <td style="color:var(--color-text-secondary)">2016</td>
+        <td style="color:var(--color-text-secondary)">SNS 마케팅 · SEO</td>
+        <td style="color:var(--color-text-secondary)">브랜드 콘텐츠 · SEO 아티클 기획</td>
+      </tr>
+      <tr>
+        <td style="font-weight:500">시원스쿨</td>
+        <td style="color:var(--color-text-secondary)">2017–2021</td>
+        <td style="color:var(--color-text-secondary)">브랜드 · 퍼포먼스 · SNS</td>
+        <td style="color:var(--color-text-secondary)">인스타그램 +1,290% · 블로그 유입 +172% · 연 10억 집행</td>
+      </tr>
+      <tr>
+        <td style="font-weight:500">에잇퍼센트</td>
+        <td style="color:var(--color-text-secondary)">2021–현재</td>
+        <td style="color:var(--color-text-secondary)">브랜드 · CRM · 그로스</td>
+        <td style="color:var(--color-text-secondary)">투자 매출 YoY +99% · 첫 투자 전환율 +526% · CPA 10% 수준</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="slide" id="axis">
+  <div class="slide-num">핵심 역량</div>
+  <h2>세 가지 축으로 움직입니다</h2>
+  <div class="axis-grid">
+    <div class="axis">
+      <div class="axis-icon">🎨</div>
+      <h3>브랜드 설계</h3>
+      <p style="font-size:13px;color:var(--color-text-secondary)">브랜드 에센스 정립 · 리브랜딩 · IMC 전략</p>
+      <div class="axis-kpi">에잇퍼센트 10주년 리브랜딩 리드<br>브랜드 캠페인 View 목표 대비 +200%</div>
+    </div>
+    <div class="axis">
+      <div class="axis-icon">📈</div>
+      <h3>그로스 & 퍼포먼스</h3>
+      <p style="font-size:13px;color:var(--color-text-secondary)">SEO 파이프라인 · 퍼포먼스 광고 · A/B 테스트</p>
+      <div class="axis-kpi">블로그 유입 YoY +172%<br>다이렉트 대출 고객 +128%, 실행액 +155%</div>
+    </div>
+    <div class="axis">
+      <div class="axis-icon">🔁</div>
+      <h3>CRM & 데이터</h3>
+      <p style="font-size:13px;color:var(--color-text-secondary)">세그먼트 설계 · 메시지 전략 · SQL 분석</p>
+      <div class="axis-kpi">투자 매출 YoY +99% (2024→2025)<br>첫 투자 전환율 +526%</div>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider" id="branding" style="border-top:0.5px solid var(--color-border-tertiary)">
+  <div class="tag tag-brand">Branding for Value Growth</div>
+  <h2>고객을 아는 브랜드, 고객이 알아주는 브랜드로</h2>
+  <p class="context">퍼포먼스의 한계는 결국 브랜드 신뢰도에서 왔다</p>
+</div>
+
+<div class="slide">
+  <div class="tag tag-brand">케이스 1 · 에잇퍼센트 리브랜딩 · 기여도 50% · 2024.03–11</div>
+  <h2>10년된 브랜드, 새 옷 입히기</h2>
+  <p>C레벨 인터뷰부터 버벌 정리, 비주얼 리뉴얼, 콘텐츠 배포까지 브랜드 에센스를 처음부터 세운 케이스</p>
+  <div class="card-grid" style="grid-template-columns:repeat(2,1fr)">
+    <div class="card">
+      <h3>문제 정의</h3>
+      <p>① '에잇퍼센트' vs '8퍼센트' 혼용 → 고객 인지 혼선<br>② 슬로건 'Must Have' → 서비스 베네핏 전혀 안 드러남<br>③ 브랜드 컬러 활용 기준 없음 → 단조로운 비주얼<br>④ 철학·비전 콘텐츠 부재 → 내외부 로열티 구축 불가</p>
+    </div>
+    <div class="card">
+      <h3>실행 과정</h3>
+      <p>① C레벨 다회 인터뷰 → 미션·비전·컨셉 명문화<br>② 국문 '에잇퍼센트' / 영문 '8percent' 전면 확정<br>③ 심볼·그라데이션 컬러 시스템 전면 개편<br>④ C레벨 인터뷰 영상·아티클 기획·제작 → 대외 배포<br>⑤ 10주년 고객 이벤트 기획·운영, 웹/앱 전면 적용</p>
+    </div>
+  </div>
+  <div class="insight">
+    <p>브랜드 버벌 혼선 해소 — 전 채널 일관된 표기 정착<br>C레벨이 직접 참여한 브랜드 스토리 콘텐츠로 내외부 로열티 강화</p>
+    <p style="font-size:12px;color:var(--color-text-tertiary)">정량 데이터 보강 예정 (브랜드 인지도 / 이벤트 참여 수 / 웹 트래픽 변화)</p>
+  </div>
+</div>
+
+<div class="section-divider" id="crm" style="border-top:0.5px solid var(--color-border-tertiary)">
+  <div class="tag tag-crm">CRM for Loyalty Growth</div>
+  <h2>유저를 확실한 고객으로 만드는 CRM</h2>
+  <p class="context">채널을 만든 다음 질문은 — 들어온 유저를 어떻게 유지할 것인가</p>
+</div>
+
+<div class="slide">
+  <div class="tag tag-crm">케이스 2 · 투자 회원가입 캠페인 · 기여도 60% · 2023.11–</div>
+  <h2>가입 프로세스 중 이탈 유저 정착시키기</h2>
+  <p>퍼널 분석 → UX 개선 제안 → CRM 설계까지, 마케터가 할 수 있는 end-to-end를 보여준 케이스</p>
+  <div class="step-grid">
+    <div class="step">
+      <div class="step-num">Step 1</div>
+      <h3>퍼널 분석 → UX 개선</h3>
+      <p>계좌 개설 단계 이탈이 가장 심각함을 데이터로 확인. 계좌 개설 완료 시 첫 투자 포인트 지급 플로우로 UX 개선 제안 및 반영</p>
+    </div>
+    <div class="step">
+      <div class="step-num">Step 2</div>
+      <h3>CRM 푸시 타이밍 설계</h3>
+      <p>계좌 개설 없이 이탈 30분 내 / 24시간 후<br>첫 투자 포인트 발급 직후 / 7일 후 / 만료 D-7 / D-1</p>
+    </div>
+    <div class="step">
+      <div class="step-num">Step 3</div>
+      <h3>메시지 워싱</h3>
+      <p>"내 포인트가 곧 사라져요" → "8퍼센트가 드린 선물 잊지 않으셨죠?"<br>공급자 언어 → 유저 사이드 언어로 전환</p>
+    </div>
+  </div>
+  <div class="metric-grid" style="margin-top:1.25rem;grid-template-columns:repeat(5,1fr)">
+    <div class="metric"><div class="metric-label">계좌개설 고객 수</div><div class="metric-value">+175%</div></div>
+    <div class="metric"><div class="metric-label">계좌개설 전환율</div><div class="metric-value">+329%</div></div>
+    <div class="metric"><div class="metric-label">첫 투자 고객 수</div><div class="metric-value">+300%</div></div>
+    <div class="metric"><div class="metric-label">첫 투자 전환율</div><div class="metric-value">+526%</div></div>
+    <div class="metric"><div class="metric-label">1인당 첫 투자액</div><div class="metric-value">+215%</div><div class="metric-sub">YoY</div></div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="tag tag-crm">케이스 3 · 투자 CRM 캠페인 · 기여도 100% · 2021.12–</div>
+  <h2>고객 니즈를 담은 푸시 메시지 개발하기</h2>
+  <p>서베이로 투자 기준을 파악하고, 포맷과 표현을 데이터로 검증해 매출을 끌어올린 케이스</p>
+  <div class="before-after">
+    <div class="ba-box ba-before">
+      <div class="ba-label">Before</div>
+      <p>공급자 관점으로 소구 우선순위 선정</p>
+      <p>상품 정보를 담기 부족한 포맷</p>
+      <p>실제 매출 견인과 동떨어진 획일화된 표현 방식</p>
+    </div>
+    <div class="ba-box ba-after">
+      <div class="ba-label">After</div>
+      <p>투자 고객 서베이로 조건 우선순위 파악 → KSP 재정의</p>
+      <p>고객이 빠르게 투자 결정할 수 있는 포맷 개발</p>
+      <p>이미지·CTA·표현 A/B 테스트 → B안 거래액·거래수 우수</p>
+    </div>
+  </div>
+  <div class="metric-grid" style="margin-top:1.25rem;grid-template-columns:repeat(3,1fr)">
+    <div class="metric"><div class="metric-label">투자 매출 YoY</div><div class="metric-value">+99%</div><div class="metric-sub">2024→2025</div></div>
+    <div class="metric"><div class="metric-label">CTR 향상</div><div class="metric-value">+0.4p%</div></div>
+    <div class="metric"><div class="metric-label">내부 반응</div><div class="metric-value" style="font-size:13px;padding-top:4px">"푸시로 15분 만에<br>909만원이 모였군요!"</div></div>
+  </div>
+</div>
+
+<div class="section-divider" id="perf" style="border-top:0.5px solid var(--color-border-tertiary)">
+  <div class="tag tag-perf">Performance for Sales Growth</div>
+  <h2>철저한 분석을 통해 점진적으로 성장하는 매출</h2>
+  <p class="context">브랜드도 없고 예산도 빠듯한 상황에서, 매출을 만들어야 했다</p>
+</div>
+
+<div class="slide">
+  <div class="tag tag-perf">케이스 4 · 부동산담보대출 퍼포먼스 · 기여도 80% · 2023.09–</div>
+  <h2>작은 예산으로 조건에 딱 맞는 유저 찾기</h2>
+  <p>CRM + SEO + 커뮤니티 바이럴 + 퍼포먼스를 엮어 다이렉트 유입 채널을 처음부터 설계한 케이스</p>
+  <div class="step-grid">
+    <div class="step">
+      <div class="step-num">전략 ①</div>
+      <h3>작은 예산으로 효율적 모객</h3>
+      <p>이탈 유저 세일즈 CRM → 대출 실행 CPA 1,055원<br>업셀링 CRM → 대출 실행 CPA 1,927원</p>
+    </div>
+    <div class="step">
+      <div class="step-num">전략 ②</div>
+      <h3>에듀케이셔널 콘텐츠</h3>
+      <p>P2P 업권 인지도 낮음 → 유저 언어로 대출 특장점 풀어낸 콘텐츠 제작. 롱테일 SEO 파이프라인 구축</p>
+    </div>
+    <div class="step">
+      <div class="step-num">전략 ③</div>
+      <h3>유저 사이드 소재 개발</h3>
+      <p>정책/규제 키워드 활용 DA 소재. 공급자 언어 지양 → 유저가 검색창에 입력하는 표현으로</p>
+    </div>
+  </div>
+  <div class="metric-grid" style="margin-top:1.25rem;grid-template-columns:repeat(4,1fr)">
+    <div class="metric"><div class="metric-label">신규 대출 고객 YoY</div><div class="metric-value">+128%</div><div class="metric-sub">2023→2024</div></div>
+    <div class="metric"><div class="metric-label">신규 실행액 YoY</div><div class="metric-value">+155%</div><div class="metric-sub">2023→2024</div></div>
+    <div class="metric"><div class="metric-label">CPA vs 대출중개법인</div><div class="metric-value">10%</div><div class="metric-sub">수수료 대비</div></div>
+    <div class="metric"><div class="metric-label">CPA vs 비교플랫폼</div><div class="metric-value">18%</div><div class="metric-sub">수수료 대비</div></div>
+  </div>
+  <div class="insight" style="margin-top:1.25rem">
+    <p>복잡한 금융 상품일수록 공급자 언어와 유저 언어 사이의 간극이 크다. 이 캠페인을 통해 금융권 용어를 그대로 쓰는 순간 유저와의 접점이 끊긴다는 걸 확인했다. 이후 퍼포먼스 소재·콘텐츠·CRM 메시지 전반에 이 원칙을 적용하고 있다.</p>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="tag tag-perf">케이스 5 · 개인신용대출 퍼포먼스 · 기여도 80% · 2021.12–2022.04</div>
+  <h2>조건에 딱 맞는 서비스 유저 찾기</h2>
+  <p>브랜드 인지도가 낮은 상황에서 데이터로 타겟을 좁히고 전환을 만든 케이스</p>
+  <div class="card-grid" style="grid-template-columns:repeat(3,1fr)">
+    <div class="card">
+      <h3>유저 속성 파악</h3>
+      <p>매체별 반응 유저 데모그래픽 분석 → 세그먼트 추출. 전환 가능성 높은 퍼널 단계에 예산 집중</p>
+    </div>
+    <div class="card">
+      <h3>퍼널별 매체 운영</h3>
+      <p>유입: 블라인드·리멤버·GDN<br>고려: FB/IG·OK캐쉬백·바이럴<br>전환: 검색·브랜드 서치</p>
+    </div>
+    <div class="card">
+      <h3>소재 A/B 테스트</h3>
+      <p>브랜드 톤앤매너 강조 vs 서비스 조건 명시 소재 테스트 → 프랙티컬한 조건 명시 소재 반응 우수</p>
+    </div>
+  </div>
+  <div class="metric-grid" style="margin-top:1.25rem;grid-template-columns:repeat(2,1fr)">
+    <div class="metric"><div class="metric-label">퍼포먼스 광고 기여 취급액</div><div class="metric-value">33.35%</div><div class="metric-sub">전체 기간 내</div></div>
+    <div class="metric"><div class="metric-label">목표 대비 달성률</div><div class="metric-value">165%</div><div class="metric-sub">목표 20% 수준 대비</div></div>
+  </div>
+  <div class="insight" style="margin-top:1.25rem">
+    <p>브랜드 인지도가 낮은 금융사가 소셜 광고를 집행하면 보이스피싱 신고를 받는 일이 생긴다. 단순 소재 문제가 아닌 구조적 신뢰도 문제라는 판단으로 리브랜딩을 제안했고, 이 문제의식이 이후 10주년 리브랜딩으로 이어졌다.</p>
+  </div>
+</div>
+
+<div class="section-divider" id="ai" style="border-top:0.5px solid var(--color-border-tertiary)">
+  <div class="tag tag-ai">AI 워크플로우</div>
+  <h2>AI를 쓰는 마케터가 아니라,<br>AI로 마케팅 시스템을 만드는 마케터</h2>
+  <p class="context">단순 프롬프팅을 넘어, 실제 업무 파이프라인에 AI를 내재화했습니다</p>
+</div>
+
+<div class="slide" style="padding-top:1.5rem">
+  <div class="agent-grid">
+    <div class="agent">
+      <h3>에이전트 직접 개발</h3>
+      <p>블로그 발행 자동화 — Word → HTML 변환 + Schema.org JSON-LD 자동 삽입</p>
+      <p>카카오톡 상품 카피 자동화 에이전트</p>
+      <p>Gemini 기반 UA 리포트 자동화 — Google Sheets RAW → 분석 리포트 자동 생성</p>
+    </div>
+    <div class="agent">
+      <h3>데이터 분석 효율화</h3>
+      <p>AI로 SQL 쿼리 설계 및 데이터 인사이트 도출 속도 단축</p>
+      <p>RFM 세그먼트 분석, 투자 퍼널 분석, CAC 분석</p>
+      <p>Redash 기반 마케팅 성과 대시보드 구축</p>
+    </div>
+    <div class="agent">
+      <h3>GEO / AEO 전략 설계</h3>
+      <p>ChatGPT·Gemini·Perplexity 대상 SOV 트래커 구축</p>
+      <p>Ground Truth 브랜드 문서 설계</p>
+      <p>쿼리 팬아웃 기반 프롬프트 뱅크 개발</p>
+    </div>
+    <div class="agent">
+      <h3>마케팅 실무 전반 내재화</h3>
+      <p>전략 기획·카피라이팅·랜딩페이지 CSS 구현까지 AI를 워크플로우의 일부로 운용</p>
+      <p>새로운 기술이 나올 때마다 마케팅에 어떻게 적용할지를 먼저 생각합니다</p>
+    </div>
+  </div>
+  <div style="margin-top:1.5rem">
+    <div class="tool-grid">
+      <div class="tool-card">
+        <h3>AI</h3>
+        <p>ChatGPT · Claude</p>
+        <p>전략 기획 · 카피 · 리포트 자동화 · 랜딩페이지 구현</p>
+      </div>
+      <div class="tool-card">
+        <h3>분석</h3>
+        <p>GA4 · GTM · Appsflyer · Amplitude · MySQL · Redash</p>
+      </div>
+      <div class="tool-card">
+        <h3>커뮤니케이션</h3>
+        <p>Google Workspace · JIRA · Confluence · Slack</p>
+      </div>
+      <div class="tool-card">
+        <h3>콘텐츠</h3>
+        <p>Figma · Strapi · Wordpress · Adobe Photoshop · Premiere</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="slide" id="forward" style="text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:280px">
+  <h2 style="margin-bottom:0.75rem">지금까지, 그리고 앞으로</h2>
+  <p style="max-width:520px;margin:0 auto 0.75rem">거의 없던 상태에서 시작해 채널·퍼널·CRM·데이터 인프라·브랜드·콘텐츠·자동화까지, 마케팅의 모든 레이어를 순서대로 쌓아왔습니다.</p>
+  <p style="max-width:520px;margin:0 auto 0.75rem">다음은 이 레이어들이 유기적으로 작동하는 통합 마케팅 구조를 설계하고, 그것을 실행하는 팀을 만드는 것입니다.</p>
+  <p style="font-size:13px;color:var(--color-text-tertiary);margin-top:1rem">포트폴리오에 담지 못한 더 자세한 이야기는 커피챗, 인터뷰를 통해 나누겠습니다.</p>
+</div>
+
+<div class="closing" id="closing">
+  <h2>브랜드의 처음부터 끝까지,<br>전략부터 실행까지 함께하겠습니다.</h2>
+  <p style="margin-top:1rem">고객을 아는 브랜드, 고객이 알아주는 브랜드로 성장하는 여정에 함께하고 싶습니다.</p>
+  <p style="margin-top:1.5rem;font-size:13px;color:var(--color-text-tertiary)">📧 이메일 &nbsp;|&nbsp; 🔗 링크드인</p>
+</div>
+
+</div>
