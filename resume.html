@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이기원 경력기술서</title>
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Pretendard',sans-serif;background:#fafaf8;color:#1a1a1a;line-height:1.7}
+
+    .wrap{max-width:760px;margin:0 auto;padding:3rem 2rem 6rem}
+
+    /* 헤더 */
+    .header{padding-bottom:2rem;border-bottom:1px solid #e5e5e5;margin-bottom:2.5rem}
+    .header h1{font-size:28px;font-weight:500;margin-bottom:0.4rem}
+    .header-sub{font-size:14px;color:#777;margin-bottom:1.25rem}
+    .header-contact{display:flex;gap:1.5rem;flex-wrap:wrap}
+    .header-contact a{font-size:13px;color:#555;text-decoration:none;display:flex;align-items:center;gap:5px}
+    .header-contact a:hover{color:#1a1a1a}
+    .portfolio-btn{
+      display:inline-block;margin-top:1rem;
+      font-size:13px;color:#3C3489;text-decoration:none;
+      padding:6px 14px;border:0.5px solid #AFA9EC;
+      border-radius:6px;background:#EEEDFE;
+    }
+    .portfolio-btn:hover{background:#dddcfc}
+
+    /* 요약 */
+    .summary{
+      background:#fff;border:0.5px solid #e5e5e5;
+      border-radius:12px;padding:1.25rem 1.5rem;
+      margin-bottom:2.5rem;font-size:14px;color:#444;line-height:1.8
+    }
+
+    /* 섹션 */
+    .section{margin-bottom:3rem}
+    .section-title{
+      font-size:11px;font-weight:500;letter-spacing:0.1em;
+      color:#999;text-transform:uppercase;
+      margin-bottom:1.5rem;padding-bottom:0.5rem;
+      border-bottom:0.5px solid #e5e5e5;
+    }
+
+    /* 경력 카드 */
+    .exp{margin-bottom:2.5rem}
+    .exp:last-child{margin-bottom:0}
+    .exp-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.25rem;flex-wrap:wrap;gap:6px}
+    .exp-company{font-size:16px;font-weight:500;color:#1a1a1a}
+    .exp-period{font-size:12px;color:#999;white-space:nowrap}
+    .exp-role{font-size:13px;color:#777;margin-bottom:1rem}
+
+    /* 업무 블록 */
+    .work-block{margin-bottom:1.5rem}
+    .work-block-header{
+      display:flex;justify-content:space-between;align-items:center;
+      margin-bottom:0.75rem;flex-wrap:wrap;gap:4px
+    }
+    .work-title{font-size:14px;font-weight:500;color:#1a1a1a}
+    .work-period{font-size:12px;color:#bbb}
+    .work-brand{font-size:12px;color:#777;margin-bottom:0.75rem}
+    .work-brand a{color:#555;text-decoration:none}
+    .work-brand a:hover{color:#1a1a1a;text-decoration:underline}
+
+    /* 역할 그룹 */
+    .role-group{margin-bottom:1rem}
+    .role-group-title{font-size:12px;font-weight:500;color:#999;margin-bottom:0.4rem;letter-spacing:0.03em}
+    ul{padding-left:1rem}
+    ul li{font-size:13px;color:#444;margin-bottom:0.3rem;line-height:1.6}
+    ul li::marker{color:#bbb}
+
+    /* 성과 */
+    .result-block{
+      background:#f7f7f5;border-radius:8px;
+      padding:0.875rem 1rem;margin-top:1rem
+    }
+    .result-title{font-size:11px;font-weight:500;color:#999;letter-spacing:0.05em;margin-bottom:0.5rem}
+    .result-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px}
+    .result-item{font-size:13px;color:#333;display:flex;align-items:flex-start;gap:6px}
+    .result-item::before{content:'→';color:#999;font-size:12px;margin-top:2px;flex-shrink:0}
+
+    /* 태그 */
+    .tag-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:0.75rem}
+    .tag{display:inline-block;font-size:11px;padding:2px 8px;border-radius:4px;font-weight:500}
+    .tag-brand{background:#EEEDFE;color:#3C3489}
+    .tag-crm{background:#E1F5EE;color:#085041}
+    .tag-perf{background:#FAEEDA;color:#633806}
+    .tag-ai{background:#E6F1FB;color:#0C447C}
+    .tag-gray{background:#F1EFE8;color:#444441}
+
+    /* 구분선 */
+    .divider{height:0.5px;background:#e5e5e5;margin:2rem 0}
+
+    /* 학력 */
+    .edu{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px}
+    .edu-name{font-size:15px;font-weight:500}
+    .edu-detail{font-size:13px;color:#777}
+    .edu-period{font-size:12px;color:#999}
+
+    /* 네비 */
+    .nav-bar{
+      position:sticky;top:0;z-index:100;
+      background:#fafaf8;border-bottom:0.5px solid #e5e5e5;
+      padding:0.6rem 2rem;display:flex;justify-content:space-between;
+      align-items:center;
+    }
+    .nav-bar-title{font-size:13px;font-weight:500;color:#1a1a1a}
+    .nav-bar a{font-size:12px;color:#777;text-decoration:none;padding:4px 10px;border-radius:6px;border:0.5px solid #e5e5e5}
+    .nav-bar a:hover{background:#f0f0ee}
+
+    @media print{
+      .nav-bar{display:none}
+      body{background:#fff}
+    }
+  </style>
+</head>
+<body>
+
+<div class="nav-bar">
+  <span class="nav-bar-title">이기원 경력기술서</span>
+  <a href="index.html">← 포트폴리오로</a>
+</div>
+
+<div class="wrap">
+
+  <!-- 헤더 -->
+  <div class="header">
+    <h1>이기원</h1>
+    <p class="header-sub">브랜드 마케터 · Brand / CRM / Growth / Performance</p>
+    <div class="header-contact">
+      <a href="mailto:itsorigin92@gmail.com">✉ itsorigin92@gmail.com</a>
+      <a href="tel:01029608850">✆ 010-2960-8850</a>
+      <a href="https://linkedin.com/in/기원-이-190460139" target="_blank">LinkedIn</a>
+    </div>
+    <a href="index.html" class="portfolio-btn">포트폴리오 보기 →</a>
+  </div>
+
+  <!-- 요약 -->
+  <div class="summary">
+    금융, 교육, 통신 등 다양한 업종에서 브랜딩부터 CRM, 퍼포먼스 광고, 데이터 분석까지 전방위적 마케팅을 수행하며 폭넓은 경험을 쌓아왔습니다. 최근에는 AI 에이전트 개발과 GEO(Generative Engine Optimization) 전략 수립 등 마케팅 자동화와 AI 활용 시스템 구축 영역으로 역할을 확장하고 있습니다. 비즈니스 목표 달성을 위한 핵심 과제를 빠르게 파악하고, 전략 수립부터 데이터 기반 실행까지 직접 끌고 갈 수 있는 마케터를 찾고 계시다면, 저의 역량이 큰 도움이 될 것입니다.
+  </div>
+
+  <!-- 경력 -->
+  <div class="section">
+    <div class="section-title">Experience</div>
+
+    <!-- 에잇퍼센트 -->
+    <div class="exp">
+      <div class="exp-header">
+        <span class="exp-company">주식회사 에잇퍼센트</span>
+        <span class="exp-period">2021.09 – 현재</span>
+      </div>
+      <div class="exp-role">마케팅팀 · 브랜드 마케팅 매니저</div>
+
+      <div class="tag-row" style="margin-bottom:1.25rem">
+        <span class="tag tag-brand">브랜딩</span>
+        <span class="tag tag-crm">CRM</span>
+        <span class="tag tag-perf">퍼포먼스</span>
+        <span class="tag tag-ai">AI 에이전트</span>
+        <span class="tag tag-gray">SEO/GEO</span>
+        <span class="tag tag-gray">데이터 분석</span>
+      </div>
+
+      <!-- IMC -->
+      <div class="work-block">
+        <div class="work-block-header">
+          <span class="work-title">IMC 커뮤니케이션</span>
+          <span class="work-period">2023.09 – 2024.12</span>
+        </div>
+        <div class="work-brand">
+          <a href="https://8percent.kr/" target="_blank">에잇퍼센트</a> — P2P 대출·투자 핀테크
+        </div>
+
+        <div class="role-group">
+          <div class="role-group-title">콘텐츠 SEO · 신규 고객 유치</div>
+          <ul>
+            <li>롱테일 키워드 추출 및 리스트업, 키워드 활용 콘텐츠 기획 및 제작</li>
+            <li>SEO 기반 가망 고객 노출 비중 확대, 공식 블로그 운영</li>
+          </ul>
+        </div>
+
+        <div class="role-group">
+          <div class="role-group-title">CRM · 고객 리텐션 강화</div>
+          <ul>
+            <li>RFM 분석 기반 고객 세그먼트 도출 및 마이그레이션 패턴 분석</li>
+            <li>세그먼트별 CRM 액션 플랜 수립 및 Confluence 문서화</li>
+            <li>시즈널 프로모션·이벤트 기획 및 운영, 신규 회원 가입 유도 프로모션 기획</li>
+            <li>카카오톡·앱푸시 콘텐츠 기획 및 발행 프로세스·톤앤매너 체계화</li>
+            <li>CRM 성과 트래킹 기초 작업 및 체계화</li>
+          </ul>
+        </div>
+
+        <div class="role-group">
+          <div class="role-group-title">웹/앱 서드파티 최적화</div>
+          <ul>
+            <li>마케팅 이벤트 택소노미 초기 기획 및 관리 (GA4, Appsflyer)</li>
+            <li>웹 UTM·앱 원링크 템플릿화, GTM 활용 웹 성과 트래킹 영역 관리</li>
+          </ul>
+        </div>
+
+        <div class="role-group">
+          <div class="role-group-title">퍼포먼스 광고</div>
+          <ul>
+            <li>금융 시장 내 자사 서비스 포지셔닝 및 타겟 맞춤 퍼포먼스 광고 채널 발굴·운영</li>
+            <li>부동산담보대출 키워드 세그먼트별(추가대출·후순위담보대출·지분담보대출) 소재 전략 수립 및 랜딩 USP 구조 설계</li>
+          </ul>
+        </div>
+
+        <div class="role-group">
+          <div class="role-group-title">SQL 기반 마케팅 데이터 분석</div>
+          <ul>
+            <li>Redash/PostgreSQL 활용 투자 이벤트 참여자 분석, 온보딩 퍼널 분석, UTM 캠페인 성과 트래킹 직접 수행</li>
+          </ul>
+        </div>
+
+        <div class="role-group">
+          <div class="role-group-title">리브랜딩 프로젝트 · 10주년 캠페인</div>
+          <ul>
+            <li>브랜드 에센스 기획, 브랜드 철학 정립 및 콘텐츠 제작·확산</li>
+            <li>10주년 캠페인 기획 및 운영</li>
+          </ul>
+        </div>
+
+        <div class="role-group">
+          <div class="role-group-title">GEO (Generative Engine Optimization)</div>
+          <ul>
+            <li>AI 검색 엔진(ChatGPT·Gemini·Perplexity·Claude) 내 브랜드 노출 패턴 분석 및 인용 구조 연구</li>
+            <li>대출/투자 서비스 인텐트 클러스터 기반 프롬프트 라이브러리 설계</li>
+            <li>AI 검색 SOV 트래커 구축 및 경쟁사 대비 브랜드 점유율 모니터링</li>
+            <li>GEO 전략 사내 공유 및 Confluence 기반 리서치 문서 체계화</li>
+          </ul>
+        </div>
+
+        <div class="role-group">
+          <div class="role-group-title">AI 에이전트 개발 · 마케팅 자동화</div>
+          <ul>
+            <li>금융소비자보호법(금소법) 준수 여부 자동 검토 에이전트 개발 — 광고 문안·랜딩페이지 URL 입력 시 위험 문구 탐지 및 수정 제안, 5개 콘텐츠 유형·JSON 구조 출력</li>
+            <li>공식 블로그 HTML 자동화 에이전트 개발 (Claude API 활용, 콘텐츠 발행 리드타임 단축)</li>
+            <li>UA 리포트 자동화 에이전트 개발 (Gemini 기반, Google Sheets API 연동)</li>
+            <li>KakaoTalk 부동산 투자 상품 카피 자동화 에이전트 개발</li>
+          </ul>
+        </div>
+
+        <div class="role-group">
+          <div class="role-group-title">CRM 자동화 시스템 기획 및 설계</div>
+          <ul>
+            <li>온보딩 단계별 4개 시나리오(계좌 미개설·첫투자 미완료·포인트 투자만·연속투자 휴면) 자동화 플로우 설계</li>
+            <li>PostgreSQL 데이터 쿼리 기반 타겟 추출 → Claude API 메시지 생성 → Kakao Bizm/FCM 발송 파이프라인 구조 설계</li>
+          </ul>
+        </div>
+
+        <div class="result-block">
+          <div class="result-title">업무 성과</div>
+          <div class="result-grid">
+            <div class="result-item">대출 다이렉트 건수 YoY +178% (23년)</div>
+            <div class="result-item">대출 다이렉트 매출 YoY +226% (24년)</div>
+            <div class="result-item">카카오톡 셀링 푸시 투자 매출 YoY +200% (23→24년)</div>
+            <div class="result-item">투자 신규 회원 가입률 YoY +143% (24년)</div>
+            <div class="result-item">투자 신규 매출 YoY +146% (24년)</div>
+            <div class="result-item">투자앱 첫 투자 전환율 YoY +204% (24년)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- 시원스쿨 -->
+    <div class="exp">
+      <div class="exp-header">
+        <span class="exp-company">(주)에스제이더블유인터내셔널</span>
+        <span class="exp-period">2017.06 – 2021.07</span>
+      </div>
+      <div class="exp-role">플랫폼비즈니스팀 · 대리</div>
+
+      <div class="tag-row" style="margin-bottom:1.25rem">
+        <span class="tag tag-brand">브랜딩</span>
+        <span class="tag tag-perf">퍼포먼스</span>
+        <span class="tag tag-gray">SNS</span>
+        <span class="tag tag-gray">SEO</span>
+        <span class="tag tag-gray">인플루언서</span>
+        <span class="tag tag-crm">CRM</span>
+      </div>
+
+      <!-- 온사이트 -->
+      <div class="work-block">
+        <div class="work-block-header">
+          <span class="work-title">온사이트 마케팅 목표 관리 및 운영</span>
+          <span class="work-period">2020.06 – 2021.06</span>
+        </div>
+        <div class="work-brand">
+          <a href="https://superkids.siwonschool.com" target="_blank">시원스쿨 슈퍼키즈</a> — 어린이 영어 교육
+        </div>
+
+        <ul>
+          <li>연간/월간 마케팅 플랜 및 KPI 수립, 중점 지표 관리</li>
+          <li>셀링 확대 위한 시즈널 프로모션 이벤트 기획·운영</li>
+          <li>판매 채널 확장 — 제휴 판매처 확장, 네이버 스마트스토어 운영</li>
+          <li>미디어 퍼널 체계화, 성과 트래킹 영역 확대</li>
+          <li>패키지 상품 기획 및 BEP 분석</li>
+          <li>홈페이지·랜딩페이지 UI 기획·제작, 디자인·개발 부서 커뮤니케이션 총괄</li>
+          <li>구매 주기별 혜택 푸시(LMS, App Push) 프로세스 기획</li>
+        </ul>
+
+        <div class="result-block">
+          <div class="result-title">업무 성과</div>
+          <div class="result-grid">
+            <div class="result-item">홈페이지 매출 YoY +15% (광고비 동기간 대비 25% 감소)</div>
+            <div class="result-item">사이트 이탈률 YoY 21.82% 축소</div>
+            <div class="result-item">평균 세션 시간 YoY 86.64% 확대</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- IMC -->
+      <div class="work-block" style="margin-top:1.5rem">
+        <div class="work-block-header">
+          <span class="work-title">IMC 마케팅 기획 및 실행</span>
+          <span class="work-period">2017.06 – 2021.06</span>
+        </div>
+        <div class="work-brand">
+          <a href="https://www.siwonschool.com" target="_blank">시원스쿨</a> ·
+          <a href="https://superkids.siwonschool.com" target="_blank">슈퍼키즈</a> ·
+          <a href="https://native.siwonschool.com" target="_blank">네이티브</a> ·
+          <a href="https://daily.siwonschool.com" target="_blank">학습지</a>
+        </div>
+
+        <div class="role-group">
+          <div class="role-group-title">소셜 미디어 채널 기획 및 운영</div>
+          <ul>
+            <li>채널별 최적화 콘텐츠 기획·제작·운영·분석 (블로그·페이스북·인스타그램·유튜브·카카오·트위터)</li>
+            <li>3년간 광고비 없이 콘텐츠만으로 전 채널 팔로워 확대</li>
+          </ul>
+        </div>
+
+        <div class="role-group">
+          <div class="role-group-title">영상 활용 퍼포먼스 광고</div>
+          <ul>
+            <li>연 14억 규모 예산 드라이브, 연간/월간 매체별 미디어 믹스 작성 및 KPI 수립</li>
+            <li>캠페인·타겟·퍼널 단계별 KSP 기획</li>
+          </ul>
+        </div>
+
+        <div class="role-group">
+          <div class="role-group-title">인플루언서 바이럴 마케팅</div>
+          <ul>
+            <li>마이크로/매크로 인플루언서 매출 A/B 테스트 → 마이크로 인플루언서 매출 기여 우수 확인 및 캠페인 적용</li>
+            <li>인플루언서 초상권 재계약 후 브랜드 광고 소재 2차 활용 구조 구축</li>
+            <li>인스타그램 인플루언서 캠페인 기획·운영, 네이티브 콘텐츠 기획</li>
+          </ul>
+        </div>
+
+        <div class="role-group">
+          <div class="role-group-title">SEO 콘텐츠 전략</div>
+          <ul>
+            <li>키워드별·고객 세그먼트별 SEO 콘텐츠 전략 기획 및 제작</li>
+            <li>네이버 검색 SEO 최적화, 가망 고객 노출 비중 확대</li>
+          </ul>
+        </div>
+
+        <div class="role-group">
+          <div class="role-group-title">체험단·서포터즈 기획 운영</div>
+          <ul>
+            <li>어린이영어 브랜딩 목적 유초등 자녀 양육 주부 대상 체험단 기획·운영 총괄</li>
+            <li>기업 CSR 목적 대학생 서포터즈 기획·운영 총괄</li>
+          </ul>
+        </div>
+
+        <div class="role-group">
+          <div class="role-group-title">CRM 기획 및 운영</div>
+          <ul>
+            <li>리텐션 확대 목적 및 셀링 푸시 메시지 기획·발행</li>
+          </ul>
+        </div>
+
+        <div class="result-block">
+          <div class="result-title">업무 성과</div>
+          <div class="result-grid">
+            <div class="result-item">인스타그램 팔로워 +1,290%</div>
+            <div class="result-item">유튜브 구독자 +274%</div>
+            <div class="result-item">블로그 구독자 +233%</div>
+            <div class="result-item">페이스북 팔로워 +132%</div>
+            <div class="result-item">카카오톡채널 친구 +125%</div>
+            <div class="result-item">대한민국 YouTube 인기 광고 영상 선정 (20년 1분기)</div>
+            <div class="result-item">유튜브 광고 VTR 평균 35.34% 유지 (19–20년)</div>
+            <div class="result-item">브랜드 검색량 유입 +200% (19–20년)</div>
+            <div class="result-item">SEO/바이럴 다이렉트 매출 ROAS YoY 평균 +176% (18–21년)</div>
+            <div class="result-item">SEO/바이럴 다이렉트 유입 YoY 평균 +172% (5.7만→9.9만)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- KT -->
+    <div class="exp">
+      <div class="exp-header">
+        <span class="exp-company">KT</span>
+        <span class="exp-period">2016.09 – 2016.12</span>
+      </div>
+      <div class="exp-role">소셜마케팅팀 · 인턴</div>
+      <ul>
+        <li>신규 서비스 출시 시 커뮤니티 바이럴 방향 기획 및 바이럴 리소스 관리</li>
+        <li>KT Olleh 공식 블로그 내 상품·서비스·신규 출시 모바일 디바이스 소개 콘텐츠 기획 및 제작</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 학력 -->
+  <div class="section">
+    <div class="section-title">Education</div>
+    <div class="edu">
+      <div>
+        <div class="edu-name">인하대학교</div>
+        <div class="edu-detail">행정학 전공 · 경영학 부전공</div>
+      </div>
+      <div class="edu-period">2011.03 – 2017.02</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
