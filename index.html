@@ -151,6 +151,24 @@
     .nav-secondary a.crm{color:#085041;border-color:#5DCAA5;background:#E1F5EE}
     .nav-secondary a.perf{color:#633806;border-color:#EF9F27;background:#FAEEDA}
     .nav-secondary a.ai{color:#0C447C;border-color:#85B7EB;background:#E6F1FB}
+
+    /* 콘텐츠 링크 리스트 */
+    .content-link-list{margin-top:0.75rem;display:flex;flex-direction:column;gap:6px}
+    .content-link-item{display:flex;align-items:flex-start;gap:8px}
+    .content-link-item a{font-size:13px;color:#3C3489;text-decoration:none;line-height:1.5}
+    .content-link-item a:hover{text-decoration:underline}
+    .content-link-dot{font-size:13px;color:#aaa;margin-top:1px;flex-shrink:0}
+
+    /* 채널 카드 */
+    .channel-card{border:0.5px solid #e5e5e5;border-radius:12px;padding:1.25rem;background:#fff;margin-top:0}
+    .channel-card-header{display:flex;align-items:center;gap:10px;margin-bottom:0.875rem}
+    .channel-label{font-size:12px;font-weight:500;padding:3px 8px;border-radius:6px;background:#f7f7f5;color:#555}
+    .channel-card h3{font-size:15px;font-weight:500;color:#1a1a1a;margin:0}
+    .channel-desc{font-size:13px;color:#555;line-height:1.6;margin-bottom:0.75rem}
+    .channel-metrics{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:0.875rem}
+    .channel-metric-pill{font-size:12px;background:#f7f7f5;border-radius:20px;padding:4px 10px;color:#1a1a1a;font-weight:500}
+    .channel-metric-pill span{color:#777;font-weight:400}
+    .channel-divider{border:none;border-top:0.5px solid #e5e5e5;margin:0.875rem 0}
   </style>
 </head>
 <body>
@@ -325,15 +343,38 @@
     <p class="context">퍼포먼스의 한계는 결국 브랜드 신뢰도에서 왔다</p>
   </div>
 
-  <!-- 브랜딩 케이스 1 -->
+  <!-- 브랜딩 케이스 1 (BI 가이드라인 추가) -->
   <div class="slide">
     <div class="tag tag-brand">케이스 1 · 에잇퍼센트 리브랜딩 · 기여도 50% · 2024.03–11</div>
     <h2>10년된 브랜드, 새 옷 입히기</h2>
     <p>C레벨 인터뷰부터 버벌 정리, 비주얼 리뉴얼, 콘텐츠 배포까지 브랜드 에센스를 처음부터 세운 케이스</p>
     <div class="card-grid" style="grid-template-columns:repeat(2,1fr)">
       <div class="card"><h3>문제 정의</h3><p>① '에잇퍼센트' vs '8퍼센트' 혼용 → 고객 인지 혼선<br>② 슬로건 'Must Have' → 서비스 베네핏 전혀 안 드러남<br>③ 브랜드 컬러 활용 기준 없음 → 단조로운 비주얼<br>④ 철학·비전 콘텐츠 부재 → 내외부 로열티 구축 불가</p></div>
-      <div class="card"><h3>실행 과정</h3><p>① C레벨 다회 인터뷰 → 미션·비전·컨셉 명문화<br>② 국문 '에잇퍼센트' / 영문 '8percent' 전면 확정<br>③ 심볼·그라데이션 컬러 시스템 전면 개편<br>④ C레벨 인터뷰 영상·아티클 기획·제작 → 대외 배포<br>⑤ 10주년 고객 이벤트 기획·운영, 웹/앱 전면 적용</p></div>
+      <div class="card"><h3>실행 과정</h3><p>① C레벨 다회 인터뷰 → 미션·비전·컨셉 명문화<br>② 국문 '에잇퍼센트' / 영문 '8percent' 전면 확정<br>③ 심볼·그라데이션 컬러 시스템 전면 개편<br>④ C레벨 인터뷰 영상·아티클 기획·제작 → 대외 배포<br>⑤ 10주년 고객 이벤트 기획·운영, 웹/앱 전면 적용<br>⑥ 리브랜딩 에셋의 서비스(웹·앱)·IR·PR 전반 적용 총괄</p></div>
     </div>
+
+    <!-- BI 가이드라인 적용 추가 -->
+    <div style="margin-top:1rem;border:0.5px solid #EEEDFE;border-radius:12px;padding:1.25rem;background:#FAFAFE">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:0.75rem">
+        <span style="font-size:12px;font-weight:500;padding:3px 8px;border-radius:6px;background:#EEEDFE;color:#3C3489">BI 가이드라인 적용 & 관리</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+        <div>
+          <p style="font-size:13px;color:#555;line-height:1.6;margin-bottom:0">심볼·컬러·버벌 아이덴티티 기준 수립 후, 앱·웹 서비스 / 회사소개 페이지 / IR 자료 / PR 배포물 등 <strong style="color:#1a1a1a">모든 외부 접점의 일관성 관리를 총괄</strong>했습니다. 디자인·카피 검수부터 최종 배포 승인까지 브랜드 아이덴티티 기준 적용의 실질적 관리자 역할.</p>
+        </div>
+        <div>
+          <p style="font-size:13px;color:#777;margin-bottom:6px">리브랜딩 에셋 적용 채널</p>
+          <p style="font-size:13px;color:#555;line-height:1.8;margin-bottom:0">
+            앱 · 웹 서비스 UI 전면 적용<br>
+            회사소개 페이지 재정립 · 배포<br>
+            투자자 IR 자료 · 언론 PR 소재<br>
+            마케팅 소재 · 이벤트 비주얼 전반
+          </p>
+          <a href="https://about.8percent.kr/service/" target="_blank" style="display:inline-block;margin-top:8px;font-size:12px;color:#3C3489;text-decoration:none;border:0.5px solid #AFA9EC;border-radius:6px;padding:3px 10px;background:#fff">about.8percent.kr →</a>
+        </div>
+      </div>
+    </div>
+
     <div class="insight">
       <p>브랜드 버벌 혼선 해소 — 전 채널 일관된 표기 정착<br>C레벨이 직접 참여한 브랜드 스토리 콘텐츠로 내외부 로열티 강화</p>
     </div>
@@ -453,69 +494,149 @@
       <p>브랜드 인지도가 낮은 금융사의 소셜 광고는 보이스피싱으로 오해받는 구조적 한계가 있었습니다. 이 판단이 리브랜딩 제안으로 이어졌고, 결국 10주년 리브랜딩으로 실현되었습니다.</p>
     </div>
   </div>
-<!-- 콘텐츠 섹션 디바이더 -->
-<div class="section-divider" id="content" style="border-top-color:#1D9E75">
-  <div class="section-divider-line">
-    <hr><span>Content</span><hr>
-  </div>
-  <div class="tag tag-crm">Content for Brand & Sales Growth</div>
-  <h2>콘텐츠로 브랜드와 매출을 동시에 만든다</h2>
-  <p class="context">고관여 상품일수록 콘텐츠가 가장 강력한 매체가 된다</p>
-</div>
 
-<!-- 콘텐츠 케이스 -->
-<div class="slide">
-  <div class="tag tag-crm">콘텐츠 마케팅 · 시원스쿨 + 에잇퍼센트 · 2017–현재</div>
-  <h2>검색하는 유저를 고객으로 만드는 콘텐츠 전략</h2>
-  <p>SEO·GEO 기반 콘텐츠로 브랜드 신뢰도와 다이렉트 매출을 동시에 만든 케이스. 광고비 0원으로 콘텐츠 UTM 기준 월 평균 1,200~1,500만원 매출을 달성했습니다.</p>
-
-  <div class="step-grid">
-    <div class="step">
-      <div class="step-num">전략 ①</div>
-      <h3>콘텐츠 전략 설계</h3>
-      <p>에듀테크·핀테크 모두 고관여 상품. 유저의 검색 키워드와 기대 맥락을 블로그 아티클로 선점하고, 유입 데이터를 분석해 다음 콘텐츠와 타 매체 소재 기획에 연쇄 활용</p>
+  <!-- ★ 신규: 대행사 협업 슬라이드 -->
+  <div class="slide">
+    <div class="tag tag-perf">대행사 협업 · 시원스쿨 · 기여도 100% · 2018–2021</div>
+    <h2>연 10억 규모 캠페인,<br>3~4개 대행사를 동시에 돌린다는 것</h2>
+    <p>퍼포먼스 매체별 전문 대행사를 셋업하고, 브리핑부터 성과 리포트까지 모든 커뮤니케이션을 혼자 총괄한 경험</p>
+    <div class="step-grid">
+      <div class="step">
+        <div class="step-num">구조 설계</div>
+        <h3>매체별 전문 대행사 셋업</h3>
+        <p>검색·DA·SNS·바이럴 등 매체 특성에 따라 잘하는 대행사를 각각 셋업. 하나의 캠페인을 3~4개 대행사가 분담 운영하는 구조 구축</p>
+      </div>
+      <div class="step">
+        <div class="step-num">크리에이티브 디렉션</div>
+        <h3>브리핑 → 시안 피드백 → 최종 승인</h3>
+        <p>캠페인 전략·목표·타겟을 브리프로 명문화. 시안 피드백 및 수정 요청, 최종 소재 승인까지 브랜드 아이덴티티 기준으로 총괄</p>
+      </div>
+      <div class="step">
+        <div class="step-num">성과 관리</div>
+        <h3>통합 리포팅 & 예산 재배분</h3>
+        <p>대행사별 성과 리포트를 통합해 채널 간 효율 비교. 성과 우수 채널에 예산 재배분하며 연 10억 광고비의 ROI 극대화</p>
+      </div>
     </div>
-    <div class="step">
-      <div class="step-num">전략 ②</div>
-      <h3>UGC · 인플루언서 활용</h3>
-      <p>마이크로/매크로 인플루언서 매출 A/B 테스트 → 마이크로가 매출 기여 우수. 초상권 재계약 후 인플루언서 영상을 브랜드 광고 소재로 2차 활용</p>
-    </div>
-    <div class="step">
-      <div class="step-num">전략 ③</div>
-      <h3>SEO/GEO 파이프라인</h3>
-      <p>검색 의도 → 롱테일 키워드 발굴 → 아티클 발행 → 유입 분석 → 다음 콘텐츠 기획의 순환 구조 구축. AI 검색 환경 대응한 GEO SOV 트래커로 확장</p>
+    <div style="margin-top:1.25rem;background:#f7f7f5;border-radius:8px;padding:1rem 1.25rem">
+      <p style="font-size:13px;color:#555;margin-bottom:0;line-height:1.7">혼자 여러 대행사를 조율하는 과정에서 배운 것은 <strong style="color:#1a1a1a">"좋은 브리프가 좋은 아웃풋을 만든다"</strong>는 것입니다. 목표와 타겟이 명확하면 대행사는 더 좋은 시안을 가져오고, 수정 횟수는 줄어들고, 결과적으로 캠페인 완성도가 올라갑니다. 이후 에잇퍼센트에서도 대행사·외주 협업 시 동일한 브리핑 구조를 적용했습니다.</p>
     </div>
   </div>
 
-  <div class="metric-grid" style="grid-template-columns:repeat(4,1fr)">
-    <div class="metric">
-      <div class="metric-label">콘텐츠 UTM 월 매출</div>
-      <div class="metric-value">1,500만</div>
-      <div class="metric-sub">시원스쿨 블로그</div>
+  <!-- 콘텐츠 섹션 디바이더 -->
+  <div class="section-divider" id="content" style="border-top-color:#1D9E75">
+    <div class="section-divider-line">
+      <hr><span>Content</span><hr>
     </div>
-    <div class="metric">
-      <div class="metric-label">블로그 유입 YoY</div>
-      <div class="metric-value">+172%</div>
-      <div class="metric-sub">에잇퍼센트 블로그</div>
+    <div class="tag tag-crm">Content for Brand & Sales Growth</div>
+    <h2>콘텐츠로 브랜드와 매출을 동시에 만든다</h2>
+    <p class="context">고관여 상품일수록 콘텐츠가 가장 강력한 매체가 된다</p>
+  </div>
+
+  <!-- 콘텐츠 케이스 -->
+  <div class="slide">
+    <div class="tag tag-crm">콘텐츠 마케팅 · 시원스쿨 + 에잇퍼센트 · 2017–현재</div>
+    <h2>검색하는 유저를 고객으로 만드는 콘텐츠 전략</h2>
+    <p>SEO·GEO 기반 콘텐츠로 브랜드 신뢰도와 다이렉트 매출을 동시에 만든 케이스. 광고비 0원으로 콘텐츠 UTM 기준 월 평균 1,200~1,500만원 매출을 달성했습니다.</p>
+
+    <div class="step-grid">
+      <div class="step">
+        <div class="step-num">전략 ①</div>
+        <h3>콘텐츠 전략 설계</h3>
+        <p>에듀테크·핀테크 모두 고관여 상품. 유저의 검색 키워드와 기대 맥락을 블로그 아티클로 선점하고, 유입 데이터를 분석해 다음 콘텐츠와 타 매체 소재 기획에 연쇄 활용</p>
+      </div>
+      <div class="step">
+        <div class="step-num">전략 ②</div>
+        <h3>UGC · 인플루언서 활용</h3>
+        <p>마이크로/매크로 인플루언서 매출 A/B 테스트 → 마이크로가 매출 기여 우수. 초상권 재계약 후 인플루언서 영상을 브랜드 광고 소재로 2차 활용</p>
+      </div>
+      <div class="step">
+        <div class="step-num">전략 ③</div>
+        <h3>SEO/GEO 파이프라인</h3>
+        <p>검색 의도 → 롱테일 키워드 발굴 → 아티클 발행 → 유입 분석 → 다음 콘텐츠 기획의 순환 구조 구축. AI 검색 환경 대응한 GEO SOV 트래커로 확장</p>
+      </div>
     </div>
-    <div class="metric">
-      <div class="metric-label">SNS 채널 성장</div>
-      <div class="metric-value">+1,290%</div>
-      <div class="metric-sub">시원스쿨 인스타그램</div>
+
+    <div class="metric-grid" style="grid-template-columns:repeat(4,1fr)">
+      <div class="metric">
+        <div class="metric-label">콘텐츠 UTM 월 매출</div>
+        <div class="metric-value">1,500만</div>
+        <div class="metric-sub">시원스쿨 블로그</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">블로그 유입 YoY</div>
+        <div class="metric-value">+172%</div>
+        <div class="metric-sub">에잇퍼센트 블로그</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">SNS 채널 성장</div>
+        <div class="metric-value">+1,290%</div>
+        <div class="metric-sub">시원스쿨 인스타그램</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">고객 평균 단가</div>
+        <div class="metric-value">17~20만</div>
+        <div class="metric-sub">시원스쿨 콘텐츠 유입 기준</div>
+      </div>
     </div>
-    <div class="metric">
-      <div class="metric-label">고객 평균 단가</div>
-      <div class="metric-value">17~20만</div>
-      <div class="metric-sub">시원스쿨 콘텐츠 유입 기준</div>
+
+    <div class="insight" style="margin-top:1.25rem">
+      <p>고관여 상품의 유저는 구매 전 충분한 정보 탐색을 거칩니다. 이 탐색 과정에 브랜드가 먼저 개입하여 광고보다 훨씬 낮은 비용으로 신뢰를 쌓을 수 있었습니다. 콘텐츠는 단순한 인지 채널이 아니라 가장 효율적인 세일즈 채널이었습니다.</p>
+      <p>마이크로 인플루언서 발굴도 같은 맥락이다. 당시 기업 제휴가 많지 않았던 마이크로 인플루언서들은 콘텐츠 진정성이 높았고, 매출 기여도도 매크로보다 우수했습니다. 데이터로 확인한 후 초상권 재계약을 통해 브랜드 광고 소재로 2차 활용하는 구조를 만들었습니다.</p>
     </div>
   </div>
 
-  <div class="insight" style="margin-top:1.25rem">
-    <p>고관여 상품의 유저는 구매 전 충분한 정보 탐색을 거칩니다. 이 탐색 과정에 브랜드가 먼저 개입하여 광고보다 훨씬 낮은 비용으로 신뢰를 쌓을 수 있었습니다. 콘텐츠는 단순한 인지 채널이 아니라 가장 효율적인 세일즈 채널이었습니다.</p>
-    <p>마이크로 인플루언서 발굴도 같은 맥락이다. 당시 기업 제휴가 많지 않았던 마이크로 인플루언서들은 콘텐츠 진정성이 높았고, 매출 기여도도 매크로보다 우수했습니다. 데이터로 확인한 후 초상권 재계약을 통해 브랜드 광고 소재로 2차 활용하는 구조를 만들었습니다.</p>
+  <!-- ★ 신규: Owned Channel 운영 슬라이드 -->
+  <div class="slide">
+    <div class="tag tag-crm">Owned Channel 운영 · 에잇퍼센트 + 시원스쿨 · 2017–현재</div>
+    <h2>채널을 운영한다는 것 —<br>콘텐츠가 자산이 되는 구조를 만드는 것</h2>
+    <p>단순 발행을 넘어 SEO·GEO 성과와 직결되는 채널 운영 구조를 직접 설계하고 운영해왔습니다.</p>
+
+    <!-- 에잇퍼센트 블로그 -->
+    <div class="channel-card">
+      <div class="channel-card-header">
+        <span class="channel-label">에잇퍼센트 블로그</span>
+        <h3><a href="https://blog.8percent.kr/" target="_blank" style="color:#1a1a1a;text-decoration:none">blog.8percent.kr ↗</a></h3>
+      </div>
+      <p class="channel-desc">투자·대출 서비스 전반의 코어 콘텐츠 기획·제작·발행. 타겟 키워드 SEO 전략으로 광고비 없이 대출 실행 매출을 직접 만드는 채널로 운영. AI 검색 환경 대응 GEO 인용률 모니터링 체계 구축, 경쟁사 대비 타겟 프롬프트 내 브랜드 인용률 1위 달성.</p>
+      <div class="channel-metrics">
+        <span class="channel-metric-pill">월 대출 실행 <span>1~2억 규모</span></span>
+        <span class="channel-metric-pill">블로그 유입 YoY <span>+172%</span></span>
+        <span class="channel-metric-pill">GEO 인용률 <span>경쟁사 대비 1위</span></span>
+      </div>
+      <hr class="channel-divider">
+      <p style="font-size:12px;color:#999;margin-bottom:8px;font-weight:500">투자 콘텐츠</p>
+      <div class="content-link-list">
+        <div class="content-link-item"><span class="content-link-dot">↗</span><a href="https://blog.8percent.kr/12464" target="_blank">주식 시장 좋은데 에잇퍼센트 투자할 필요가 있을까?</a></div>
+        <div class="content-link-item"><span class="content-link-dot">↗</span><a href="https://blog.8percent.kr/10546" target="_blank">에잇퍼센트 투자자 10명 중 6명이 1년 후에 재투자하는 이유</a></div>
+      </div>
+      <p style="font-size:12px;color:#999;margin-bottom:8px;font-weight:500;margin-top:0.875rem">대출 콘텐츠</p>
+      <div class="content-link-list">
+        <div class="content-link-item"><span class="content-link-dot">↗</span><a href="https://blog.8percent.kr/14442" target="_blank">P2P 대출이란? 뜻부터 조건, 금리까지 한 번에 알아보기</a></div>
+        <div class="content-link-item"><span class="content-link-dot">↗</span><a href="https://blog.8percent.kr/12841" target="_blank">공동명의로 된 아파트, 지분만큼 쪼개서 담보 대출이 가능할까?</a></div>
+      </div>
+      <p style="font-size:12px;color:#999;margin-bottom:8px;font-weight:500;margin-top:0.875rem">리브랜딩 히스토리 콘텐츠</p>
+      <div class="content-link-list">
+        <div class="content-link-item"><span class="content-link-dot">↗</span><a href="https://blog.8percent.kr/8936" target="_blank">열 살 에잇퍼센트, 자아를 찾는 사춘기를 맞이하다.</a></div>
+        <div class="content-link-item"><span class="content-link-dot">↗</span><a href="https://blog.8percent.kr/9033" target="_blank">브랜드의 뼈대를 세우다 – "우리는 누구인가"에 답하는 시간</a></div>
+        <div class="content-link-item"><span class="content-link-dot">↗</span><a href="https://blog.8percent.kr/9227" target="_blank">브랜드의 뼈대를 세우다 – "모두가 같은 그림을 그릴 수 있도록"</a></div>
+        <div class="content-link-item"><span class="content-link-dot">↗</span><a href="https://blog.8percent.kr/11994" target="_blank">브랜드, 나침반이 되다 – "에잇퍼센트가 어떤 회사인지 묻는다면"</a></div>
+      </div>
+    </div>
+
+    <!-- 시원스쿨 블로그 -->
+    <div class="channel-card" style="margin-top:12px">
+      <div class="channel-card-header">
+        <span class="channel-label">시원스쿨 네이버 블로그</span>
+        <h3><a href="https://blog.naver.com/siwonschool0" target="_blank" style="color:#1a1a1a;text-decoration:none">blog.naver.com/siwonschool0 ↗</a></h3>
+      </div>
+      <p class="channel-desc">영어 학습 관련 롱테일 키워드 선점을 목적으로 한 SEO 아티클 기획·제작. 검색 유입 → 서비스 전환 퍼널 구조 설계. 콘텐츠 UTM 기준 월 평균 1,500만원 매출 달성.</p>
+      <div class="channel-metrics">
+        <span class="channel-metric-pill">콘텐츠 UTM 월 매출 <span>1,500만원</span></span>
+        <span class="channel-metric-pill">고객 평균 단가 <span>17~20만원</span></span>
+      </div>
+    </div>
   </div>
-</div>
-  
+
   <!-- AI 섹션 디바이더 -->
   <div class="section-divider" id="ai" style="border-top-color:#378ADD">
     <div class="section-divider-line">
@@ -566,16 +687,16 @@
 
   <!-- 지금까지, 그리고 앞으로 -->
   <div class="slide" id="forward" style="display:flex;flex-direction:column;justify-content:center;min-height:260px">
-  <h2 style="margin-bottom:1.25rem">지금까지, 그리고 앞으로</h2>
-  <p style="max-width:580px;margin-bottom:0.75rem">
-    브랜딩, 그로스, CRM, 퍼포먼스, 콘텐츠 — 브랜드 마케팅에 필요한 모든 레이어를 
-    한 겹씩 쌓아왔습니다. 흩어진 빛이 프리즘을 통과하면 비로소 스펙트럼이 펼쳐지듯,
-    이제 이 레이어들이 하나의 구조 안에서 유기적으로 작동하게 만들고 싶습니다.
-  </p>
-  <p style="font-size:13px;color:#999">
-    포트폴리오에 다 담지 못한 이야기는 커피챗이나 인터뷰에서 나누겠습니다.
-  </p>
-</div>
+    <h2 style="margin-bottom:1.25rem">지금까지, 그리고 앞으로</h2>
+    <p style="max-width:580px;margin-bottom:0.75rem">
+      브랜딩, 그로스, CRM, 퍼포먼스, 콘텐츠 — 브랜드 마케팅에 필요한 모든 레이어를
+      한 겹씩 쌓아왔습니다. 흩어진 빛이 프리즘을 통과하면 비로소 스펙트럼이 펼쳐지듯,
+      이제 이 레이어들이 하나의 구조 안에서 유기적으로 작동하게 만들고 싶습니다.
+    </p>
+    <p style="font-size:13px;color:#999">
+      포트폴리오에 다 담지 못한 이야기는 커피챗이나 인터뷰에서 나누겠습니다.
+    </p>
+  </div>
 
   <!-- 마무리 -->
   <div class="closing" id="closing">
@@ -584,7 +705,7 @@
     <div style="margin-top:1.5rem;display:flex;gap:12px;justify-content:flex-start;flex-wrap:wrap">
       <a href="mailto:itsorigin92@gmail.com" style="font-size:14px;color:#555;text-decoration:none;padding:8px 16px;border:0.5px solid #e5e5e5;border-radius:8px">itsorigin92@gmail.com</a>
       <a href="https://linkedin.com/in/기원-이-190460139" target="_blank" style="font-size:14px;color:#555;text-decoration:none;padding:8px 16px;border:0.5px solid #e5e5e5;border-radius:8px">LinkedIn</a>
- <a href="resume.html" style="font-size:14px;color:#555;text-decoration:none;padding:8px 16px;border:0.5px solid #e5e5e5;border-radius:8px">경력기술서 보기</a> 
+      <a href="resume.html" style="font-size:14px;color:#555;text-decoration:none;padding:8px 16px;border:0.5px solid #e5e5e5;border-radius:8px">경력기술서 보기</a>
     </div>
   </div>
 
