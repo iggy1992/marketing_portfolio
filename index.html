@@ -179,6 +179,9 @@
     /* 첫 번째 이미지(커버)는 전체 폭 */
     .bi-gallery-grid img:first-child {grid-column: 1 / -1;}
     .bi-caption {font-size: 0.75rem;color: #999; text-align: right; margin-top: 0.5rem;}
+	/* 두 번째 케이스*/
+	.step-images {margin-top: 0.75rem; display: flex; flex-direction: column; gap: 0.5rem;}
+	.step-images img {width: 100%; border-radius: 6px; display: block;}
   
     @media (max-width: 600px) {
     .bi-gallery-grid {grid-template-columns: 1fr;}
@@ -410,10 +413,32 @@
     <h2>브랜드 철학으로 로열티 높이기</h2>
     <p>브랜드 핵심 메시지를 단순한 카피가 아닌 고객이 선택해야 하는 차별화 포인트로 설계하고, 영상·SEO·SNS·UGC를 하나의 톤으로 통합한 IMC 전략 케이스</p>
     <div class="step-grid">
-      <div class="step"><div class="step-num">전략 ①</div><h3>브랜드 핵심 메시지 정의</h3><p>"영어가 안되면 시원스쿨" — 고객이 영어를 못하는 이유를 파고드는 메시지로 차별화 포인트 설계</p></div>
-      <div class="step"><div class="step-num">전략 ②</div><h3>IMC 전략 구축</h3><p>브랜드 핵심 메시지 → 영상 광고 → SEO → SNS → UGC까지 하나의 톤으로 통합. 퍼널 단계별 최적화 소재 배치</p></div>
-      <div class="step"><div class="step-num">전략 ③</div><h3>크리에이티브 A/B 테스트</h3><p>ATL 소재 베리에이션으로 BTL 소재 제작. 발견(ATL) → 흥미(BTL) → 고려(인플루언서) → 구매(UGC) 퍼널 설계</p></div>
+  <div class="step">
+    <div class="step-num">전략 ①</div>
+    <h3>브랜드 핵심 메시지 정의</h3>
+    <p>"영어가 안되면 시원스쿨" — 고객이 영어를 못하는 이유를 파고드는 메시지로 차별화 포인트 설계</p>
+    <div class="step-images">
+      <img src="assets/siwon/brand_core_1.png" alt="브랜드 핵심 메시지 - 유튜브 콘텐츠 1" loading="lazy">
+      <img src="assets/siwon/brand_core_2.png" alt="브랜드 핵심 메시지 - 유튜브 콘텐츠 2" loading="lazy">
     </div>
+  </div>
+  <div class="step">
+    <div class="step-num">전략 ②</div>
+    <h3>IMC 전략 구축</h3>
+    <p>브랜드 핵심 메시지 → 영상 광고 → SEO → SNS → UGC까지 하나의 톤으로 통합. 퍼널 단계별 최적화 소재 배치</p>
+    <div class="step-images">
+      <img src="assets/siwon/IMC.png" alt="IMC 전략 - 유튜브 채널 콘텐츠" loading="lazy">
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">전략 ③</div>
+    <h3>크리에이티브 A/B 테스트</h3>
+    <p>ATL 소재 베리에이션으로 BTL 소재 제작. 발견(ATL) → 흥미(BTL) → 고려(인플루언서) → 구매(UGC) 퍼널 설계</p>
+    <div class="step-images">
+      <img src="assets/siwon/UGC.jpeg" alt="크리에이티브 A/B 테스트 - UGC 인플루언서" loading="lazy">
+    </div>
+  </div>
+</div>
     <div class="metric-grid" style="grid-template-columns:repeat(3,1fr)">
       <div class="metric"><div class="metric-label">CTR 목표 대비</div><div class="metric-value">120%</div><div class="metric-sub">달성</div></div>
       <div class="metric"><div class="metric-label">VTR 목표 대비</div><div class="metric-value">120%</div><div class="metric-sub">달성</div></div>
