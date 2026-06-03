@@ -169,6 +169,21 @@
     .channel-metric-pill{font-size:12px;background:#f7f7f5;border-radius:20px;padding:4px 10px;color:#1a1a1a;font-weight:500}
     .channel-metric-pill span{color:#777;font-weight:400}
     .channel-divider{border:none;border-top:0.5px solid #e5e5e5;margin:0.875rem 0}
+
+
+    /* 브랜딩 이미지 */
+    .bi-gallery {margin: 2rem 0 3rem;}
+    .bi-gallery-grid {display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem;}
+    .bi-gallery-grid img {width: 100%; border-radius: 8px; display: block; cursor: pointer; transition: opacity 0.2s;}
+    .bi-gallery-grid img:hover {opacity: 0.85;}
+    /* 첫 번째 이미지(커버)는 전체 폭 */
+    .bi-gallery-grid img:first-child {grid-column: 1 / -1;}
+    .bi-caption {font-size: 0.75rem;color: #999; text-align: right; margin-top: 0.5rem;}
+  
+    @media (max-width: 600px) {
+    .bi-gallery-grid {grid-template-columns: 1fr;}
+    .bi-gallery-grid img:first-child {grid-column: 1;}}
+    
   </style>
 </head>
 <body>
@@ -367,7 +382,24 @@
         <a href="https://about.8percent.kr" target="_blank" style="font-size:12px;color:#3C3489;text-decoration:none;border:0.5px solid #AFA9EC;border-radius:20px;padding:3px 10px;background:#EEEDFE;margin-left:4px">about.8percent.kr →</a>
       </div>
     </div>
-
+  <!-- BI 갤러리 — 성과 수치 위에 삽입 -->
+<div class="bi-gallery">
+  <div class="bi-gallery-grid">
+    <img src="assets/bi/bi_cover.jpg" alt="Brand Identity Guidelines 커버" loading="lazy">
+    <img src="assets/bi/bi_manifesto.png" alt="브랜드 매니페스토" loading="lazy">
+	<img src="assets/bi/bi_mission.png" alt="브랜드 미션” loading="lazy">
+<img src="assets/bi/bi_concept.png" alt="브랜드 컨셉 피라미드” loading="lazy">
+    <img src="assets/bi/bi_color.jpg" alt="브랜드 컬러 시스템" loading="lazy">
+    <img src="assets/bi/bi_gradient.jpg" alt="그라디언트 컬러 조합" loading="lazy">
+    <img src="assets/bi/bi_signature_grid.jpg" alt="시그니처 그리드" loading="lazy">
+    <img src="assets/bi/bi_minimum_size.jpg" alt=“심볼 규정" loading="lazy">
+    <img src="assets/bi/bi_graphic_a.jpg" alt="그래픽 예시 1” loading="lazy">
+    <img src="assets/bi/bi_graphic_b.jpg" alt="그래픽 예시 2” loading="lazy">
+    <img src="assets/bi/bi_website_loan.jpg" alt="웹사이트 대출 페이지 적용" loading="lazy">
+    <img src="assets/bi/bi_poster.jpg" alt="오프라인 포스터 적용" loading="lazy">
+  </div>
+  <p class="bi-caption">Brand Identity Guidelines — October 2024 VER 1.0</p>
+</div>
     <div class="insight">
       <p>브랜드 버벌 혼선 해소 — 전 채널 일관된 표기 정착<br>C레벨이 직접 참여한 브랜드 스토리 콘텐츠로 내외부 로열티 강화</p>
     </div>
